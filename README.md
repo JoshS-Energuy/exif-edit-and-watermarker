@@ -1,3 +1,9 @@
+TO DOWNLOAD
+click 1.0.0 under Releases to the right
+
+
+
+
 # EXIF Geotag / Date Editor & Watermarker
 
 A small Tkinter GUI app for JPEG photos that lets you:
