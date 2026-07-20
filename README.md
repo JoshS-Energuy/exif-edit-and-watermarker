@@ -1,3 +1,6 @@
+TO DOWNLOAD
+click 1.0.0 under Releases to the right
+
 # Energuy R-Team Tools
 
 A small Tkinter GUI suite. Pick a tool from the pane on the left:
