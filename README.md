@@ -1,20 +1,7 @@
-# Energuy R-Team Tools
+# ZIP to PDF
 
-A small Tkinter GUI suite. Pick a tool from the pane on the left:
-
-## EXIF Geotag / Watermarker
-
-For JPEG photos:
-
-- View and edit the **Date Taken** (`DateTimeOriginal`) EXIF field
-- View and edit the **GPS geotag** (latitude/longitude) EXIF fields
-- Save those EXIF changes back to the original file
-- Burn the geotag (or custom text) onto the photo itself as a visible
-  watermark and save the result as a new file
-
-## ZIP to PDF
-
-Converts a ZIP archive into a single PDF, with one page per file inside it:
+A small Tkinter GUI app that converts a ZIP archive into a single PDF,
+with one page per file inside it:
 
 - Files load with a thumbnail preview (rendered from the actual image or
   the first page of embedded PDFs) and are ordered naturally by filename
@@ -28,6 +15,11 @@ Converts a ZIP archive into a single PDF, with one page per file inside it:
 - Hidden files, folders, and macOS `__MACOSX` metadata are ignored
 - Unsupported files show up in the preview flagged as such, and are
   skipped (and listed in a summary) if left in when you convert
+
+This is the `zip-to-pdf` branch: a standalone single-tool build. The
+`master` branch has this tool plus an EXIF geotag/watermarker tool behind
+a tool-picker pane; the `exif-watermarker` branch has that other tool
+standalone.
 
 ## Setup
 
@@ -47,19 +39,14 @@ python main.py
 
 ```
 pip install pyinstaller
-pyinstaller --noconfirm --onefile --windowed --name "EnerguyRTeamTools" main.py
+pyinstaller --noconfirm --onefile --windowed --name "ZipToPdf" main.py
 ```
 
-The output is `dist\EnerguyRTeamTools.exe` — a single file with no console
-window that runs without a Python install. Rebuild it after any code change.
+The output is `dist\ZipToPdf.exe` — a single file with no console window
+that runs without a Python install. Rebuild it after any code change.
 
 ## Notes
 
-- Only JPEG files are supported for EXIF read/write (the `piexif` library
-  requirement). PNG/other formats can still be watermarked but won't carry
-  EXIF metadata.
-- The watermark font falls back to Pillow's built-in default font if
-  `arial.ttf` isn't available on the system.
-- PDF page thumbnails need `pymupdf` (in `requirements.txt`); if it's
-  missing, PDFs still convert fine but show a generic "PDF" placeholder
-  in the preview instead of a rendered thumbnail.
+- PDF page thumbnails need `pymupdf`; if it's missing, PDFs still convert
+  fine but show a generic "PDF" placeholder in the preview instead of a
+  rendered thumbnail.
