@@ -1,6 +1,6 @@
 
 TO DOWNLOAD
-click 1.1.0 under Releases to the right
+click the version number under Releases to the right
 
 
 
